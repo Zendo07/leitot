@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2nd Anniversary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Kaushan+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Dancing Script', cursive;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 105, 180, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, #ffeef8 0%, #fff0f5 25%, #ffe4e1 50%, #fdf2f8 75%, #fef7ff 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Romantic background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(255, 182, 193, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(255, 215, 0, 0.1) 1px, transparent 1px);
+            background-size: 100px 100px, 150px 150px;
+            pointer-events: none;
+            z-index: -1;
+            animation: sparkle 20s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .music-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+        }
+
+        .music-btn {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Dancing Script', cursive;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .music-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+        }
+
+        .music-btn.active {
+            background: linear-gradient(45deg, #ff1493, #dc143c);
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            position: relative;
+        }
+
+        .title {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            background: linear-gradient(45deg, #ff1493, #ff69b4, #ffd700, #ff69b4);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+            margin-bottom: 30px;
+            animation: gradientShift 3s ease-in-out infinite, fadeInDown 2s ease-out;
+            font-weight: 700;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-family: 'Kaushan Script', cursive;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: #dc143c;
+            text-shadow: 0 4px 8px rgba(220, 20, 60, 0.3);
+            animation: fadeInUp 2s ease-out 0.5s both;
+            margin-bottom: 20px;
+        }
+
+        .romantic-divider {
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(45deg, #ff69b4, #ffd700);
+            margin: 20px auto;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .romantic-divider::before {
+            content: '💕';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+
+        /* Realistic Bloomed Tulips */
+        .tulip-garden {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            margin: 60px 0;
+            gap: 20px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .tulip {
+            position: relative;
+            animation: tulipSway 6s ease-in-out infinite;
+        }
+
+        .tulip:nth-child(2n) { animation-delay: -2s; }
+        .tulip:nth-child(3n) { animation-delay: -4s; }
+
+        .realistic-tulip {
+            width: 60px;
+            height: 160px;
+            position: relative;
+        }
+
+        /* Bloomed tulip petals */
+        .tulip-bloom {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 70px;
+        }
+
+        .petal {
+            position: absolute;
+            width: 18px;
+            height: 35px;
+            border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+        }
+
+        .petal-1 {
+            top: 5px;
+            left: 16px;
+            transform: rotate(0deg);
+            z-index: 3;
+        }
+
+        .petal-2 {
+            top: 15px;
+            left: 5px;
+            transform: rotate(-30deg);
+            z-index: 2;
+        }
+
+        .petal-3 {
+            top: 15px;
+            right: 5px;
+            transform: rotate(30deg);
+            z-index: 2;
+        }
+
+        .petal-4 {
+            top: 25px;
+            left: 8px;
+            transform: rotate(-60deg);
+            z-index: 1;
+        }
+
+        .petal-5 {
+            top: 25px;
+            right: 8px;
+            transform: rotate(60deg);
+            z-index: 1;
+        }
+
+        .petal-6 {
+            top: 30px;
+            left: 16px;
+            transform: rotate(180deg);
+            z-index: 1;
+        }
+
+        .tulip-pink .petal {
+            background: linear-gradient(145deg, #ff69b4 0%, #ff1493 50%, #dc143c 100%);
+            box-shadow: 
+                inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+                0 2px 8px rgba(255, 105, 180, 0.4);
+        }
+
+        .tulip-yellow .petal {
+            background: linear-gradient(145deg, #ffd700 0%, #ffb347 50%, #ff8c00 100%);
+            box-shadow: 
+                inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+                0 2px 8px rgba(255, 215, 0, 0.4);
+        }
+
+        .tulip-center {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #2d3436, #636e72);
+            border-radius: 50%;
+            z-index: 4;
+        }
+
+        .tulip-center::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+        }
+
+        .tulip-stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 90px;
+            background: linear-gradient(to bottom, #00b894 0%, #00a085 50%, #008f7a 100%);
+            border-radius: 3px;
+            box-shadow: 
+                inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+                inset -1px -1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .tulip-leaf {
+            position: absolute;
+            bottom: 30px;
+            width: 25px;
+            height: 15px;
+            background: linear-gradient(45deg, #00b894, #00a085);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            transform-origin: right center;
+        }
+
+        .tulip-leaf-left {
+            left: -10px;
+            transform: rotate(-45deg);
+        }
+
+        .tulip-leaf-right {
+            right: -10px;
+            transform: rotate(45deg);
+        }
+
+        @keyframes tulipSway {
+            0%, 100% { transform: rotate(-4deg) translateY(0px); }
+            25% { transform: rotate(2deg) translateY(-2px); }
+            50% { transform: rotate(4deg) translateY(0px); }
+            75% { transform: rotate(-2deg) translateY(-1px); }
+        }
+
+        /* Scrapbook Style Photo Sections */
+        .photo-section {
+            background: 
+                radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="%23fefefe"/><circle cx="20" cy="20" r="1" fill="%23f0f0f0"/><circle cx="80" cy="80" r="0.5" fill="%23f5f5f5"/></pattern></defs><rect width="100" height="100" fill="url(%23paper)"/></svg>');
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+            position: relative;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 3px solid rgba(255, 182, 193, 0.2);
+            animation: slideInUp 1.5s ease-out both;
+            transform: rotate(-0.5deg);
+        }
+
+        .photo-section:nth-child(even) {
+            transform: rotate(0.5deg);
+        }
+
+        .photo-section::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .polaroid-frame {
+            background: white;
+            padding: 20px 20px 60px 20px;
+            border-radius: 10px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.1);
+            transform: rotate(-2deg);
+            margin: 0 auto 40px;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .polaroid-frame:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .photo-container {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ffeef8, #fff0f5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #dc143c;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+            font-family: 'Kaushan Script', cursive;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+        }
+
+        .photo-title {
+            font-family: 'Great Vibes', cursive;
+            color: #dc143c;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(220, 20, 60, 0.2);
+        }
+
+        .typewriter-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            line-height: 1.8;
+            color: #2d3436;
+            text-align: left;
+            background: rgba(255, 182, 193, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #ff69b4;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .typewriter-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            animation: typewriter-reveal 0.5s ease-out forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes typewriter-reveal {
+            from { width: 100%; }
+            to { width: 0%; }
+        }
+
+        .typewriter-line {
+            opacity: 0;
+            animation: typewriter-line 3s ease-out forwards;
+            margin-bottom: 15px;
+        }
+
+        .typewriter-line:nth-child(1) { animation-delay: 1.5s; }
+        .typewriter-line:nth-child(2) { animation-delay: 3s; }
+        .typewriter-line:nth-child(3) { animation-delay: 4.5s; }
+        .typewriter-line:nth-child(4) { animation-delay: 6s; }
+        .typewriter-line:nth-child(5) { animation-delay: 7.5s; }
+
+        @keyframes typewriter-line {
+            0% { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Double Photo Section */
+        .double-photo-section {
+            background: 
+                radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+            position: relative;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 3px solid rgba(255, 182, 193, 0.2);
+            animation: slideInUp 1.5s ease-out both;
+            transform: rotate(0.3deg);
+        }
+
+        .double-photo-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .double-polaroid {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            border-radius: 8px;
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.12),
+                0 0 0 1px rgba(0, 0, 0, 0.08);
+            transform: rotate(-1deg);
+            position: relative;
+            width: 280px;
+        }
+
+        .double-polaroid:nth-child(2) {
+            transform: rotate(1deg);
+            margin-top: 20px;
+        }
+
+        .double-photo-container-inner {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .double-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ffeef8, #fff0f5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #dc143c;
+            text-align: center;
+            padding: 15px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .double-photo-container-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .double-caption {
+            position: absolute;
+            bottom: 8px;
+            left: 15px;
+            right: 15px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 25px;
+            animation: floatHeart 12s linear infinite;
+            opacity: 0;
+        }
+
+        .floating-petal {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ff69b4;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: floatPetal 15s linear infinite;
+            opacity: 0.7;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 80px 20px;
+            color: #dc143c;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            text-shadow: 0 2px 4px rgba(220, 20, 60, 0.2);
+        }
+
+            {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            padding: 12px 18px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+            background: linear-gradient(45deg, #ff1493, #ffb347);
+        }
+
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Music Sidebar */
+        .music-sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #ffb6c1 0%, #ffe4b5 100%);
+    padding: 80px 20px 20px;
+    z-index: 1000;
+    overflow-y: auto;
+    border-right: 3px solid #ff69b4;
+}
+
+.music-sidebar.show {
+    display: block;
+}
+
+
+        .music-btn {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px 15px;
+            background: linear-gradient(45deg, #ff69b4, #ffd700);
+            border: none;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .music-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
+            background: linear-gradient(45deg, #ff1493, #ffb347);
+        }
+
+        .music-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Overlay for mobile */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .music-sidebar {
+                width: 280px;
+            }
+            
+            .toggle-btn {
+                font-size: 14px;
+                padding: 10px 14px;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px) rotate(0deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(-0.5deg);
+            }
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatPetal {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 60px 15px 40px;
+            }
+
+            .photo-section, .double-photo-section {
+                padding: 30px;
+                margin: 40px 0;
+            }
+
+            .polaroid-frame {
+                max-width: 320px;
+                padding: 15px 15px 40px 15px;
+            }
+
+            .photo-container {
+                height: 250px;
+            }
+
+            .double-photo-container {
+                gap: 20px;
+            }
+
+            .double-polaroid {
+                width: 240px;
+            }
+
+            .double-photo-container-inner {
+                height: 180px;
+            }
+
+            .tulip-garden {
+                gap: 15px;
+                padding: 30px;
+            }
+
+            .realistic-tulip {
+                width: 50px;
+                height: 140px;
+            }
+
+            .music-controls {
+                top: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+
+            .music-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+                margin: 0 3px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .polaroid-frame {
+                max-width: 280px;
+            }
+
+            .double-polaroid {
+                width: 200px;
+            }
+
+            .double-photo-container-inner {
+                height: 150px;
+            }
+
+            .typewriter-text {
+                padding: 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Music Toggle Button -->
+<button class="toggle-btn" onclick="toggleSidebar()">🎵 Music</button>
+
+<!-- Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<!-- Music Sidebar -->
+<div class="music-sidebar" id="musicSidebar">
+    <button class="music-btn" onclick="playMusic('together')">Together</button>
+    <button class="music-btn" onclick="playMusic('allieverneed')">All I Ever Need</button>
+    <button class="music-btn" onclick="playMusic('whenimetyou')">When I Met You</button>
+    <button class="music-btn" onclick="playMusic('SYWLG')">SYWLG</button>
+    <button class="music-btn" onclick="stopMusic()">⏹️ Stop</button>
+</div>
+
+<!-- Audio elements -->
+<audio id="together" src="pictures/together.mp3"></audio>
+<audio id="allieverneed" src="pictures/allieverneed.mp3"></audio>
+<audio id="whenimetyou" src="pictures/whenimetyou.mp3"></audio>
+<audio id="SYWLG" src="pictures/SYWLG.mp3"></audio>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Happy 2nd Anniversary</h1>
+            <p class="subtitle">Two Years of Love</p>
+            <div class="romantic-divider"></div>
+        </header>
+
+        <div class="tulip-garden">
+            <div class="tulip realistic-tulip tulip-pink">
+                <div class="tulip-bloom">
+                    <div class="petal petal-1"></div>
+                    <div class="petal petal-2"></div>
+                    <div class="petal petal-3"></div>
+                    <div class="petal petal-4"></div>
+                    <div class="petal petal-5"></div>
+                    <div class="petal petal-6"></div>
+                    <div class="tulip-center"></div>
+                </div>
+                <div class="tulip-stem"></div>
+                <div class="tulip-leaf tulip-leaf-left"></div>
+                <div class="tulip-leaf tulip-leaf-right"></div>
+            </div>
+            <div class="tulip realistic-tulip tulip-yellow">
+                <div class="tulip-bloom">
+                    <div class="petal petal-1"></div>
+                    <div class="petal petal-2"></div>
+                    <div class="petal petal-3"></div>
+                    <div class="petal petal-4"></div>
+                    <div class="petal petal-5"></div>
+                    <div class="petal petal-6"></div>
+                    <div class="tulip-center"></div>
+                </div>
+                <div class="tulip-stem"></div>
+                <div class="tulip-leaf tulip-leaf-left"></div>
+                <div class="tulip-leaf tulip-leaf-right"></div>
+            </div>
+            <div class="tulip realistic-tulip tulip-pink">
+                <div class="tulip-bloom">
+                    <div class="petal petal-1"></div>
+                    <div class="petal petal-2"></div>
+                    <div class="petal petal-3"></div>
+                    <div class="petal petal-4"></div>
+                    <div class="petal petal-5"></div>
+                    <div class="petal petal-6"></div>
+                    <div class="tulip-center"></div>
+                </div>
+                <div class="tulip-stem"></div>
+                <div class="tulip-leaf tulip-leaf-left"></div>
+                <div class="tulip-leaf tulip-leaf-right"></div>
+            </div>
+            <div class="tulip realistic-tulip tulip-yellow">
+                <div class="tulip-bloom">
+                    <div class="petal petal-1"></div>
+                    <div class="petal petal-2"></div>
+                    <div class="petal petal-3"></div>
+                    <div class="petal petal-4"></div>
+                    <div class="petal petal-5"></div>
+                    <div class="petal petal-6"></div>
+                    <div class="tulip-center"></div>
+                </div>
+                <div class="tulip-stem"></div>
+                <div class="tulip-leaf tulip-leaf-left"></div>
+                <div class="tulip-leaf tulip-leaf-right"></div>
+            </div>
+            <div class="tulip realistic-tulip tulip-pink">
+                <div class="tulip-bloom">
+                    <div class="petal petal-1"></div>
+                    <div class="petal petal-2"></div>
+                    <div class="petal petal-3"></div>
+                    <div class="petal petal-4"></div>
+                    <div class="petal petal-5"></div>
+                    <div class="petal petal-6"></div>
+                    <div class="tulip-center"></div>
+                </div>
+                <div class="tulip-stem"></div>
+                <div class="tulip-leaf tulip-leaf-left"></div>
+                <div class="tulip-leaf tulip-leaf-right"></div>
+            </div>
+        </div>
+
+      <section class="photo-section">
+  <h2 class="photo-title">First Meetup</h2>
+  
+  <div class="polaroid-frame">
+    <div class="photo-container">
+      <img src="pictures/1st.jpg" alt="Our Firs Meeting">
+    </div>
+    <div class="photo-caption">The moment that changed everything 💕</div>
+  </div>
+
+  <div class="typewriter-text">
+    <div class="typewriter-line">This was our very first meeting a moment I'll never forget. These two stuffed toys hold a special place in my heart because they remind me of us.</div>
+    <div class="typewriter-line">They carry the memory of that day, filled with so much happiness. When I look at them, I remember how comfortable I felt being with you how naturally everything fell into place.</div>
+    <div class="typewriter-line">I'll be honest, before we met I was filled with nervous excitement and a mix of emotions. My mind kept wandering to "what ifs"…</div>
+    <div class="typewriter-line">What if you became distant? What if our meeting didn't go well? What if it ended awkwardly, or worse what if you decided to break up with me? I had so many negative thoughts swirling in my head.</div>
+  </div>
+</section>
+
+<section class="photo-section">
+  <h2 class="photo-title">First Meetup</h2>
+  
+  <div class="polaroid-frame">
+    <div class="photo-container">
+      <img src="pictures/2nd.jpg" alt="Our First Meeting">
+    </div>
+    <div class="photo-caption">The feeling I can't explain</picture></div>
+  </div>
+
+  <div class="typewriter-text">
+    <div class="typewriter-line">I was scared at first to reach out and hold your hand. I didn’t know how you'd react, and that uncertainty was terrifying.</div>
+    <div class="typewriter-line">But I took the risk I asked for your hand under the excuse of a photo, and you let me. That moment, simple as it was, made me feel so loved and so nervous at the same time.</div>
+    <div class="typewriter-line">It was the first time I felt something I couldn’t fully explain like my heart didn’t know whether to jump or stay still. And later, when we walked outside, I found the courage to hold your hand again.</div>
+    <div class="typewriter-line">I wanted to hug you, hold you closer… but I was too shy. Still, just being near you, feeling your hand in mine that was everything.</div>
+  </div>
+</section>
+
+<section class="double-photo-section">
+  <h2 class="photo-title">My Pretty Girlfriend</h2>
+
+  <div class="double-photo-container">
+
+    <div class="double-polaroid">
+      <div class="double-photo-container-inner">
+        <img src="pictures/3rd.jpg" alt="Third Memory">
+      </div>
+      <div class="double-caption">Gorgeous</div>
+    </div>
+
+    <div class="double-polaroid">
+      <div class="double-photo-container-inner">
+        <img src="pictures/4th.jpg" alt="Fourth Memory">
+      </div>
+      <div class="double-caption">Pretty Lady</div>
+    </div>
+
+     <div class="typewriter-text">
+    <div class="typewriter-line">I was truly amazed when I saw you in person. I couldn’t believe how beautiful you were even more than I imagined. You asked me why I always look at you that way… </div>
+    <div class="typewriter-line">But you don’t know how much I love just looking at your face. You’re so pretty, so innocent and I was completely stunned.</div>
+    <div class="typewriter-line">But what surprised me even more was your personality. I never expected you to be that shy, demure, and soft-spoken — mahinhin, so girly. I honestly didn’t see it coming, especially since you’re usually the bungengera type who likes to argue on calls! 😆</div>
+    <div class="typewriter-line">That contrast… it made me fall even deeper. I love everything about you, your looks, your voice, your ways, your softness. You’re everything I never knew I needed.</div>
+    <div class="typewriter-line">Please don’t leave me. I love you so much. And no Hindi ako babaera, hayst! HAHAHAHA.</div>
+</div>
+</section>
+
+<script>
+        let isUserInteracted = false;
+
+        // Track user interaction for mobile audio
+        document.addEventListener('touchstart', function() {
+            isUserInteracted = true;
+        }, { once: true });
+
+        document.addEventListener('click', function() {
+            isUserInteracted = true;
+        }, { once: true });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('musicSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const isOpen = sidebar.classList.contains('show');
+            
+            if (isOpen) {
+                closeSidebar();
+            } else {
+                sidebar.classList.add('show');
+                overlay.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeSidebar() {
+            const sidebar = document.getElementById('musicSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            sidebar.classList.remove('show');
+            overlay.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        function playMusic(id) {
+            try {
+                // Check user interaction for mobile
+                if (!isUserInteracted) {
+                    alert('Please tap anywhere on the screen first to enable audio playback on mobile devices.');
+                    return;
+                }
+
+                // Stop all current audio
+                const audios = document.querySelectorAll('audio');
+                audios.forEach(audio => {
+                    audio.pause();
+                    audio.currentTime = 0;
+                });
+
+                const audio = document.getElementById(id);
+                if (audio) {
+                    const playPromise = audio.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise
+                            .then(() => {
+                                console.log('Playing:', id);
+                            })
+                            .catch(error => {
+                                console.error('Playback failed:', error);
+                                alert('Audio playback failed. Please make sure the audio file exists and try again.');
+                            });
+                    }
+                } else {
+                    console.error('Audio element not found:', id);
+                }
+            } catch (error) {
+                console.error('Error in playMusic:', error);
+            }
+        }
+
+        function stopMusic() {
+            const audios = document.querySelectorAll('audio');
+            audios.forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+            console.log('All music stopped');
+        }
+
+        // Close sidebar with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSidebar();
+            }
+        });
+
+    let isSidebarOpen = false;
+
+  function toggleSidebar() {
+    const sidebar = document.getElementById('musicSidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    isSidebarOpen = !isSidebarOpen;
+
+    if (isSidebarOpen) {
+      sidebar.classList.add('show');
+      overlay.classList.add('show');
+    } else {
+      sidebar.classList.remove('show');
+      overlay.classList.remove('show');
+    }
+  }
+
+  function playMusic(id) {
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(audio => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+
+    const audio = document.getElementById(id);
+    if (audio) {
+      audio.load();
+      audio.play().catch(err => {
+        console.error("Playback error:", err);
+      });
+    }
+  }
+
+  function stopMusic() {
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(audio => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  }
+    </script>
+
+</body>
+</html>
